@@ -1,0 +1,166 @@
+/*------------------------------------------------------------------
+
+  Demo Page Styles
+
+-------------------------------------------------------------------*/
+html, body {
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    font-size: 10px;
+}
+.content-wrap {
+    position: relative;
+    max-width: none;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*------------------------------------------------------------------
+
+  Dark & Light side styles
+
+-------------------------------------------------------------------*/
+.dark-side,
+.light-side {
+    height: 100%;
+    background-color: #080325;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    outline: 1px solid transparent;
+}
+.light-side {
+    background-color: #ffffff;
+}
+.dark-side,
+.dark-side:hover,
+.dark-side:focus,
+.dark-side-name {
+    color: #ffffff;
+    text-decoration: none;
+}
+.light-side,
+.light-side:hover,
+.light-side:focus,
+.light-side-name {
+    color: #080325;
+    text-decoration: none;
+}
+
+/* Background on hover images */
+.dark-side .image,
+.light-side .image {
+    position: absolute;
+    width: 150%;
+    opacity: 0;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    outline: 1px solid transparent;
+    -webkit-transition: .3s opacity ease;
+    transition: .3s opacity ease;
+}
+.dark-side:hover .image,
+.light-side:hover .image {
+    opacity: 0.2;
+}
+.dark-side .image {
+    left: 0; top: 0; bottom: 0;
+}
+.light-side .image {
+    right: 0; top: 0; bottom: 0;
+}
+
+/* Sides positions and skew */
+.dark-side,
+.light-side {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    -webkit-transform: skew(-8deg);
+    transform: skew(-8deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    outline: 1px solid transparent;
+}
+.dark-side {
+    left: -50%;
+}
+.light-side {
+    left: 50%;
+}
+.dark-side > div,
+.light-side > div {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 100%;
+    -webkit-transform: skew(8deg);
+    transform: skew(8deg);
+}
+
+
+/* Logo and Description on center screen */
+.dark-side .logo,
+.light-side .logo,
+.dark-side .descr,
+.light-side .descr {
+    position: absolute;
+    top: 50%;
+    width: 350px;
+    margin-left: -175px;
+    margin-top: -37px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.dark-side .logo,
+.dark-side .descr {
+    left: 100%;
+}
+
+.dark-side .descr,
+.light-side .descr {
+    margin-top: 40px;
+}
+
+/* Side names */
+.dark-side-name,
+.light-side-name {
+    position: absolute;
+    font-size: 2.7rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    outline: 1px solid transparent;
+}
+.dark-side-name {
+    top: 2%;
+    left: 2%;
+}
+.light-side-name {
+    bottom: 2%;
+    right: 2%;
+}
+
+
+@media screen and (max-width: 600px) {
+    .dark-side .logo,
+    .light-side .logo,
+    .dark-side .descr,
+    .light-side .descr {
+        width: 250px;
+        margin-left: -125px;
+        margin-top: -26px;
+    }
+    .dark-side .descr,
+    .light-side .descr {
+        margin-top: 30px;
+    }
+    .dark-side-name,
+    .light-side-name {
+        display: none;
+    }
+}
